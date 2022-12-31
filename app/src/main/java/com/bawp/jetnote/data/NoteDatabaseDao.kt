@@ -22,6 +22,4 @@ interface NoteDatabaseDao {
 
     @Delete
     suspend fun deleteNote(note: Note)
-
-
 }

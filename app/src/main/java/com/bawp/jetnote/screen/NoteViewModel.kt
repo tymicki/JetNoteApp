@@ -29,9 +29,7 @@ class NoteViewModel @Inject constructor(private val repository: NoteRepository) 
                     } else {
                         _noteList.value = listOfNotes
                     }
-
                 }
-
         }
     }
 
