@@ -1,7 +1,7 @@
 package com.bawp.jetnote.util
 
 import androidx.room.TypeConverter
-import java.util.*
+import java.util.UUID
 
 class UUIDConverter {
     @TypeConverter

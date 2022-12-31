@@ -14,7 +14,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 
-
 @ExperimentalComposeUiApi
 @Composable
 fun NoteInputText(
@@ -24,26 +23,26 @@ fun NoteInputText(
     maxLine: Int = 1,
     onTextChange: (String) -> Unit,
     onImeAction: () -> Unit = {}
-                ) {
+) {
     val keyboardController = LocalSoftwareKeyboardController.current
 
     TextField(
         value = text,
         onValueChange = onTextChange,
-             colors = TextFieldDefaults.textFieldColors(
-                 backgroundColor = Color.Transparent),
-             maxLines = maxLine,
-             label = { Text(text = label)},
-             keyboardOptions = KeyboardOptions.Default.copy(
-                 imeAction = ImeAction.Done),
-           keyboardActions = KeyboardActions(onDone = {
-                onImeAction()
-               keyboardController?.hide()
-
-           }),
+        colors = TextFieldDefaults.textFieldColors(
+            backgroundColor = Color.Transparent
+        ),
+        maxLines = maxLine,
+        label = { Text(text = label) },
+        keyboardOptions = KeyboardOptions.Default.copy(
+            imeAction = ImeAction.Done
+        ),
+        keyboardActions = KeyboardActions(onDone = {
+            onImeAction()
+            keyboardController?.hide()
+        }),
         modifier = modifier
-             )
-
+    )
 }
 
 @Composable
@@ -52,13 +51,13 @@ fun NoteButton(
     text: String,
     onClick: () -> Unit,
     enabled: Boolean = true
-              ) {
-    Button(onClick = onClick,
-          shape = CircleShape,
-          enabled = enabled,
-          modifier = modifier) {
+) {
+    Button(
+        onClick = onClick,
+        shape = CircleShape,
+        enabled = enabled,
+        modifier = modifier
+    ) {
         Text(text)
-
     }
-
 }

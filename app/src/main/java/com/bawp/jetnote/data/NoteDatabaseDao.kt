@@ -1,6 +1,5 @@
 package com.bawp.jetnote.data
 
-import androidx.compose.runtime.MutableState
 import androidx.room.*
 import com.bawp.jetnote.model.Note
 import kotlinx.coroutines.flow.Flow
@@ -13,16 +12,13 @@ interface NoteDatabaseDao {
             Flow<List<Note>>
 
     @Query("SELECT * from notes_tbl where id =:id")
-   suspend fun getNoteById(id: String): Note
+    suspend fun getNoteById(id: String): Note
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-   suspend fun insert(note: Note)
+    suspend fun insert(note: Note)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-   suspend fun update(note: Note)
-
-    @Query("DELETE from notes_tbl")
-    suspend fun deleteAll()
+    suspend fun update(note: Note)
 
     @Delete
     suspend fun deleteNote(note: Note)

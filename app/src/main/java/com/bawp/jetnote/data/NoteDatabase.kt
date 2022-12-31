@@ -9,6 +9,6 @@ import com.bawp.jetnote.util.UUIDConverter
 
 @Database(entities = [Note::class], version = 1, exportSchema = false)
 @TypeConverters(DateConverter::class, UUIDConverter::class)
-abstract class NoteDatabase: RoomDatabase() {
+abstract class NoteDatabase : RoomDatabase() {
     abstract fun noteDao(): NoteDatabaseDao
 }
